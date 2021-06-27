@@ -27,25 +27,30 @@ function game() {
     let singleGameResult = ""
     let playerScore = 0
     let computerScore = 0
- 
+
     for (let i = 0; i < 5; i++) {
         singleGameResult = singleGame(prompt("rock, paper, scisors ?"), computerPlay())
-        
-        if (/Win!/.test(singleGameResult)){
+
+        if (/Win!/.test(singleGameResult)) {
             playerScore++;
-        }else{
+        }
+        if (/Loose!/.test(singleGameResult)) {
             computerScore++;
         }
-        
+        if (/W\.O!/.test(singleGameResult)) {
+            computerScore++;
+        }
+
+
         console.log(`you:${playerScore} cpu:${computerScore}`)
         console.log(singleGameResult)
-        
+
     }
-    
+
     if (playerScore > computerScore) {
         return "You Won! Congratulation";
     }
-    
+
     if (playerScore > computerScore) {
         return "You Losse! Try Again"
     }
