@@ -6,7 +6,7 @@ function computerPlay() {
 
 function singleGame(playerSelection, computerselection) {
     if (validPlays.indexOf(playerSelection.toLowerCase()) < 0) {
-        return `${playerSelection} is a invalid Play`
+        return ` W.O! ${playerSelection} is a invalid Play`
     }
 
     if (playerSelection === computerselection) {
@@ -29,12 +29,11 @@ function game() {
     let computerScore = 0
  
     for (let i = 0; i < 5; i++) {
-        singleGameResult = singleGame(prompt(), computerPlay())
+        singleGameResult = singleGame(prompt("rock, paper, scisors ?"), computerPlay())
         
         if (/Win!/.test(singleGameResult)){
             playerScore++;
-        }
-        if (/Win!/.test(singleGameResult)){
+        }else{
             computerScore++;
         }
         
